@@ -1,0 +1,7 @@
+username: admin
+password: admin
+protocol: https
+host: localhost
+port: 5432
+verify_ssl: false
+debug: true
