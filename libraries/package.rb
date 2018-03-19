@@ -22,10 +22,38 @@ class Package < Inspec.resource(1)
     Custom resource for AEM package
   "
 
-  def initialize
+  def initialize(group_name, package_name, package_version)
     conf = read_config
     @client = init_aem_client(conf)
 
-    @params = {}
+    @params = {
+      group_name: group_name,
+      package_name: package_name,
+      package_version: package_version
+    }
+  end
+
+  def has_package_imported?
+    package = @client.package(@params[:group_name], @params[:package_name], @params[:package_version])
+    result = package.is_uploaded
+    return false unless result.message.eql? "Package #{group_name}/#{package_name}-#{package_version} is uploaded"
+  end
+
+  def has_package_not_imported?
+    package = @client.package(@params[:group_name], @params[:package_name], @params[:package_version])
+    result = package.is_uploaded
+    return false unless result.message.eql? "Package #{group_name}/#{package_name}-#{package_version} is not uploaded"
+  end
+
+  def has_package_installed?
+    package = @client.package(@params[:group_name], @params[:package_name], @params[:package_version])
+    result = package.exists
+    return false unless result.message.eql? "Package #{group_name}/#{package_name}-#{package_version} exist"
+  end
+
+  def has_package_not_installed?
+    package = @client.package(@params[:group_name], @params[:package_name], @params[:package_version])
+    result = package.exists
+    return false unless result.message.eql? "Package #{group_name}/#{package_name}-#{package_version} does not exist"
   end
 end

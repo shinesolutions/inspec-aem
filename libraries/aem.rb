@@ -29,6 +29,23 @@ class Aem < Inspec.resource(1)
     @params = {}
   end
 
+  def has_login_page?
+    result = @client.aem.get_login_page_wait_until_ready(
+      _retries:
+      {
+        max_tries: '60',
+        base_sleep_seconds: '2',
+        max_sleep_seconds: '2'
+      }
+    )
+    return false unless result.message.eql? 'Login page retrieved'
+  end
+
+  def has_no_login_page?
+    result = @client.aem.get_login_page
+    return true unless result.message.eql? 'Login page retrieved'
+  end
+
   def has_crxde_enabled?
     result = @client.aem.get_crxde_status
     result.data == true
