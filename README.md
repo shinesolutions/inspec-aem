@@ -10,7 +10,7 @@ Usage
 
 Run profile directly from Chef Supermarket:
 
-    inspec supermarket exec shinesolutions/aem-security
+    inspec supermarket exec shinesolutions/aem
 
 Run profile directly from GitHub:
 
