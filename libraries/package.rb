@@ -22,20 +22,9 @@ class Package < Inspec.resource(1)
     Custom resource for AEM package
   "
 
-  def initialize(group_name, package_name, package_version)
+  def initialize(package_group, package_name, package_version)
     conf = read_config
     @client = init_aem_client(conf)
-
-    params = {}
-    %w[username password protocol host port debug timeout].each { |field|
-      env_field = format('aem_%<field>s', field: field)
-      if !ENV[env_field].nil?
-        params[field.to_sym] = ENV[env_field]
-      elsif !config.nil? && !config[field.to_sym].nil?
-        params[field.to_sym] = config[field.to_sym]
-      end
-      return params
-    }
 
     @params = {
       package_group: ENV[package_group],
