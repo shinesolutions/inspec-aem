@@ -22,7 +22,7 @@ class Package < Inspec.resource(1)
     Custom resource for AEM package
   "
 
-  def initialize(package_group, package_name, package_version)
+  def initialize
     conf = read_config
     @client = init_aem_client(conf)
 
