@@ -26,21 +26,32 @@ class Package < Inspec.resource(1)
     conf = read_config
     @client = init_aem_client(conf)
 
+    params = {}
+    %w[username password protocol host port debug timeout].each { |field|
+      env_field = format('aem_%<field>s', field: field)
+      if !ENV[env_field].nil?
+        params[field.to_sym] = ENV[env_field]
+      elsif !config.nil? && !config[field.to_sym].nil?
+        params[field.to_sym] = config[field.to_sym]
+      end
+      return params
+    }
+
     @params = {
-      group_name: group_name,
-      package_name: package_name,
-      package_version: package_version
+      package_group: ENV[package_group],
+      package_name: ENV[package_name],
+      package_version: ENV[package_version]
     }
   end
 
   def has_package_imported?
-    package = @client.package(@params[:group_name], @params[:package_name], @params[:package_version])
+    package = @client.package(@params[:package_group], @params[:package_name], @params[:package_version])
     result = package.is_uploaded
     return false unless result.message.eql? "Package #{group_name}/#{package_name}-#{package_version} is uploaded"
   end
 
   def has_package_not_imported?
-    package = @client.package(@params[:group_name], @params[:package_name], @params[:package_version])
+    package = @client.package(@params[:package_group], @params[:package_name], @params[:package_version])
     result = package.is_uploaded
     return false unless result.message.eql? "Package #{group_name}/#{package_name}-#{package_version} is not uploaded"
   end
