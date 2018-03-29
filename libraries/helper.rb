@@ -21,8 +21,10 @@ def read_config
           env_field = format('aem_%<field>s', field: field)
           if !ENV[env_field].nil?
             config_params[field.to_sym] = ENV[env_field]
-          else !config.nil? && !config[field.to_sym].nil?
+          elsif !config.nil? && !config[field.to_sym].nil?
             config_params[field.to_sym] = config[field.to_sym]
+          else
+            # User default values from ruby_aem
           end
         }
     return config_params
