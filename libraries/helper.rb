@@ -1,4 +1,4 @@
-# Copyright 2018 Shine Solutions
+#  Copyright 2018 Shine Solutions
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,16 +16,16 @@ require 'ruby_aem'
 def read_config
   config_file = ENV['INSPEC_AEM_CONF'] || './conf/aem.yml'
   config = YAML.load_file(config_file) if File.exist?(config_file)
-  params = {}
-  %w[username password protocol host port debug timeout].each { |field|
-    env_field = format('aem_%<field>s', field: field)
-    if !ENV[env_field].nil?
-      params[field.to_sym] = ENV[env_field]
-    elsif !config.nil? && !config[field.to_sym].nil?
-      params[field.to_sym] = config[field.to_sym]
-    end
-    return params
-  }
+  config_params = {}
+        %w[username password protocol host port debug timeout].each { |field|
+          env_field = format('aem_%<field>s', field: field)
+          if !ENV[env_field].nil?
+            config_params[field.to_sym] = ENV[env_field]
+          else !config.nil? && !config[field.to_sym].nil?
+            config_params[field.to_sym] = config[field.to_sym]
+          end
+        }
+    return config_params
 end
 
 def init_aem_client(conf)

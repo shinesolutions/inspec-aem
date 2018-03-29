@@ -27,33 +27,33 @@ class Package < Inspec.resource(1)
     @client = init_aem_client(conf)
 
     @params = {
-      package_group: ENV[package_group],
-      package_name: ENV[package_name],
-      package_version: ENV[package_version]
+      package_group: ENV['package_group'],
+      package_name: ENV['package_name'],
+      package_version: ENV['package_version']
     }
   end
 
   def has_package_imported?
     package = @client.package(@params[:package_group], @params[:package_name], @params[:package_version])
-    result = package.is_uploaded
-    return false unless result.message.eql? "Package #{group_name}/#{package_name}-#{package_version} is uploaded"
+    result = package.exists
+    return true if result.message.eql? "Package #{@params[:package_group]}/#{@params[:package_name]}-#{@params[:package_version]} exists"
   end
 
   def has_package_not_imported?
     package = @client.package(@params[:package_group], @params[:package_name], @params[:package_version])
-    result = package.is_uploaded
-    return false unless result.message.eql? "Package #{group_name}/#{package_name}-#{package_version} is not uploaded"
+    result = package.exists
+    return true if result.message.eql? "Package #{@params[:package_group]}/#{@params[:package_name]}-#{@params[:package_version]} does not exist"
   end
 
   def has_package_installed?
-    package = @client.package(@params[:group_name], @params[:package_name], @params[:package_version])
+    package = @client.package(@params[:package_group], @params[:package_name], @params[:package_version])
     result = package.exists
-    return false unless result.message.eql? "Package #{group_name}/#{package_name}-#{package_version} exist"
+    return true if result.message.eql? "Package #{@params[:package_group]}/#{@params[:package_name]}-#{@params[:package_version]} exists"
   end
 
   def has_package_not_installed?
-    package = @client.package(@params[:group_name], @params[:package_name], @params[:package_version])
+    package = @client.package(@params[:package_group], @params[:package_name], @params[:package_version])
     result = package.exists
-    return false unless result.message.eql? "Package #{group_name}/#{package_name}-#{package_version} does not exist"
+    return true if result.message.eql? "Package #{@params[:package_group]}/#{@params[:package_name]}-#{@params[:package_version]} does not exist"
   end
 end
