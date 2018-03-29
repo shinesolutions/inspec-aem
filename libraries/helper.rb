@@ -17,17 +17,17 @@ def read_config
   config_file = ENV['INSPEC_AEM_CONF'] || './conf/aem.yml'
   config = YAML.load_file(config_file) if File.exist?(config_file)
   config_params = {}
-        %w[username password protocol host port debug timeout].each { |field|
-          env_field = format('aem_%<field>s', field: field)
-          if !ENV[env_field].nil?
-            config_params[field.to_sym] = ENV[env_field]
-          elsif !config.nil? && !config[field.to_sym].nil?
-            config_params[field.to_sym] = config[field.to_sym]
-          else
-            # User default values from ruby_aem
-          end
-        }
-    return config_params
+  %w[username password protocol host port debug timeout].each { |field|
+    env_field = format('aem_%<field>s', field: field)
+    if !ENV[env_field].nil?
+      config_params[field.to_sym] = ENV[env_field]
+    elsif !config.nil? && !config[field.to_sym].nil?
+      config_params[field.to_sym] = config[field.to_sym]
+    else
+      puts 'Using Default values from ruby_aem'
+    end
+  }
+  config_params
 end
 
 def init_aem_client(conf)
