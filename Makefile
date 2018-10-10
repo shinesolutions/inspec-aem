@@ -1,17 +1,18 @@
 ci: tools deps lint
 
 clean:
-	rm Gemfile.lock inspec.lock
+	rm *.lock bin vendor
 
 deps:
-	bundle install
+	bundle config --local path vendor/bundle
+	bundle install --binstubs
 
 lint:
-	inspec check .
-	rubocop
+	bundle exec inspec check .
+	bundle exec rubocop Gemfile controls/ libraries/
 
 test:
-	inspec exec .
+	bundle exec inspec exec .
 
 tools:
 	gem install bundler
