@@ -155,9 +155,9 @@ control 'author-repo-migration-upgrade-log' do
   describe file('/opt/aem/author/crx-quickstart/logs/upgrade.log') do
     it { should exist }
     it { should be_file }
-    its('content') { should match /migration completed/ }
-    its('content') { should_not match /\*WARN\*/ }
-    its('content') { should_not match /\*ERROR\*/ }
+    its('content') { should match(/migration completed/) }
+    its('content') { should_not match(/\*WARN\*/) }
+    its('content') { should_not match(/\*ERROR\*/) }
   end
 end
 
@@ -168,9 +168,9 @@ control 'publish-repo-migration-upgrade-log' do
   describe file('/opt/aem/publish/crx-quickstart/logs/upgrade.log') do
     it { should exist }
     it { should be_file }
-    its('content') { should match /migration completed/ }
-    its('content') { should_not match /\*WARN\*/ }
-    its('content') { should_not match /\*ERROR\*/ }
+    its('content') { should match(/migration completed/) }
+    its('content') { should_not match(/\*WARN\*/) }
+    its('content') { should_not match(/\*ERROR\*/) }
   end
 end
 
@@ -181,9 +181,9 @@ control 'aem-author-succesfully-upgraded' do
   describe file('/opt/aem/author/crx-quickstart/logs/upgrade.log') do
     it { should exist }
     it { should be_file }
-    its('content') { should match /UPGRADE TASK DONE/ }
-    its('content') { should match /UPGRADE FINISHED\:/ }
-    its('content') { should_not match /\*ERROR\*/ }
+    its('content') { should match(/UPGRADE TASK DONE/) }
+    its('content') { should match(/UPGRADE FINISHED\:/) }
+    its('content') { should_not match(/\*ERROR\*/) }
   end
 end
 
@@ -194,9 +194,9 @@ control 'aem-publish-succesfully-upgraded' do
   describe file('/opt/aem/publish/crx-quickstart/logs/upgrade.log') do
     it { should exist }
     it { should be_file }
-    its('content') { should match /UPGRADE TASK DONE/ }
-    its('content') { should match /UPGRADE FINISHED\:/ }
-    its('content') { should_not match /\*ERROR\*/ }
+    its('content') { should match(/UPGRADE TASK DONE/) }
+    its('content') { should match(/UPGRADE FINISHED\:/) }
+    its('content') { should_not match(/\*ERROR\*/) }
   end
 end
 
