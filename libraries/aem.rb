@@ -55,4 +55,10 @@ class Aem < Inspec.resource(1)
     result = @client.aem.get_crxde_status
     result.data == false
   end
+
+  def has_aem_version_installed?(version)
+    result = @client.aem.get_product_info
+    installed_version = result.data[6].strip
+    return true if installed_version == "Adobe Experience Manager (#{version})"
+  end
 end
