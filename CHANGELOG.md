@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Add support for AEM 6.5 versions tests #3
+
 ## [0.11.0] - 2019-05-03
 
 ### Added

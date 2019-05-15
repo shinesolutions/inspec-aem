@@ -64,6 +64,16 @@ control 'author-aem-6.4-standalone-quickstart-exist' do
   end
 end
 
+control 'author-aem-6.5-standalone-quickstart-exist' do
+  impact 1.0
+  title 'Check if Author AEM 6.5.0 standalone quickstart file exists'
+  desc 'Check if Author AEM 6.5.0 standalone quickstart file exists'
+  describe file('/opt/aem/author/crx-quickstart/app/cq-quickstart-6.5.0-standalone-quickstart.jar') do
+    it { should exist }
+    it { should be_file }
+  end
+end
+
 control 'author-aem-6.2-standalone-quickstart-dont-exist' do
   impact 1.0
   title 'Check if Author AEM 6.2.0 standalone quickstart file dont exist'
@@ -87,6 +97,15 @@ control 'author-aem-6.4-standalone-quickstart-dont-exist' do
   title 'Check if Author AEM 6.4.0 standalone quickstart file dont exist'
   desc 'Check if Author AEM 6.4.0 standalone quickstart file dont exist'
   describe file('/opt/aem/author/crx-quickstart/app/cq-quickstart-6.4.0-standalone-quickstart.jar') do
+    it { should_not exist }
+  end
+end
+
+control 'author-aem-6.5-standalone-quickstart-dont-exist' do
+  impact 1.0
+  title 'Check if Author AEM 6.5.0 standalone quickstart file dont exist'
+  desc 'Check if Author AEM 6.5.0 standalone quickstart file dont exist'
+  describe file('/opt/aem/author/crx-quickstart/app/cq-quickstart-6.5.0-standalone-quickstart.jar') do
     it { should_not exist }
   end
 end
@@ -121,6 +140,16 @@ control 'publish-aem-6.4-standalone-quickstart-exist' do
   end
 end
 
+control 'publish-aem-6.5-standalone-quickstart-exist' do
+  impact 1.0
+  title 'Check if Publish AEM 6.5.0 standalone quickstart file exists'
+  desc 'Check if Publish AEM 6.5.0 standalone quickstart file exists'
+  describe file('/opt/aem/publish/crx-quickstart/app/cq-quickstart-6.5.0-standalone-quickstart.jar') do
+    it { should exist }
+    it { should be_file }
+  end
+end
+
 control 'publish-aem-6.2-standalone-quickstart-dont-exist' do
   impact 1.0
   title 'Check if Publish AEM 6.2.0 standalone quickstart file dont exists'
@@ -144,6 +173,15 @@ control 'publish-aem-6.4-standalone-quickstart-dont-exist' do
   title 'Check if Publish AEM 6.4.0 standalone quickstart file dont exists'
   desc 'Check if Publish AEM 6.4.0 standalone quickstart file dont exists'
   describe file('/opt/aem/publish/crx-quickstart/app/cq-quickstart-6.4.0-standalone-quickstart.jar') do
+    it { should_not exist }
+  end
+end
+
+control 'publish-aem-6.5-standalone-quickstart-dont-exist' do
+  impact 1.0
+  title 'Check if Publish AEM 6.5.0 standalone quickstart file dont exists'
+  desc 'Check if Publish AEM 6.5.0 standalone quickstart file dont exists'
+  describe file('/opt/aem/publish/crx-quickstart/app/cq-quickstart-6.5.0-standalone-quickstart.jar') do
     it { should_not exist }
   end
 end
@@ -233,5 +271,14 @@ control 'aem-6.4.0-version-installed' do
   desc 'Check if AEM 6.4.0 is installed'
   describe aem do
     it { should have_aem_version_installed('6.4.0') }
+  end
+end
+
+control 'aem-6.5.0-version-installed' do
+  impact 1.0
+  title 'Check if AEM 6.5.0 is installed'
+  desc 'Check if AEM 6.5.0 is installed'
+  describe aem do
+    it { should have_aem_version_installed('6.5.0') }
   end
 end
