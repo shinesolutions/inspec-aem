@@ -1,12 +1,11 @@
 ci: clean deps lint
 
 clean:
-	rm *.lock bin vendor
+	rm -rf inspec.lock bin vendor
 
 deps:
-	gem install bundler
+	gem install bundler --version=1.17.3
 	bundle config --local path vendor/bundle
-	rm -rf .bundle
 	bundle install --binstubs
 
 lint:
