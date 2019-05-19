@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 control 'aem-crxde-enabled' do
   impact 1.0
   title 'Check AEM CRXDE is enabled'
