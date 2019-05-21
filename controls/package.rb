@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 control 'aem-package-imported' do
   impact 1.0
   title 'Check if AEM Package is imported'

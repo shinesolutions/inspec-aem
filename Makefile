@@ -1,9 +1,10 @@
-ci: tools deps lint
+ci: clean deps lint
 
 clean:
-	rm *.lock bin vendor
+	rm -rf inspec.lock bin vendor
 
 deps:
+	gem install bundler --version=1.17.3
 	bundle config --local path vendor/bundle
 	bundle install --binstubs
 
@@ -14,7 +15,7 @@ lint:
 test:
 	bundle exec inspec exec .
 
-tools:
-	gem install bundler
+release:
+	rtk release
 
-.PHONY: ci clean deps lint test tools
+.PHONY: ci clean deps lint test release
