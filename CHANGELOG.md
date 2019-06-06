@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+- Upgrade ruby_aem to 3.2.1
+
 ## 0.12.0 - 2019-05-21
 ### Added
 - Add support for AEM 6.5 versions tests [#3]
