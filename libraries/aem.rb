@@ -58,6 +58,22 @@ class Aem < Inspec.resource(1)
     result.data == false
   end
 
+  def has_saml_enabled?
+    result = @client.saml.get
+
+    saml_properties = result.response.body.properties
+
+    saml_properties.idp_cert_alias.is_set == true
+  end
+
+  def has_saml_disabled?
+    result = @client.saml.get
+
+    saml_properties = result.response.body.properties
+
+    saml_properties.idp_cert_alias.is_set == false
+  end
+
   def has_aem_version_installed?(version)
     result = @client.aem.get_product_info
     installed_version = result.data[6].strip
