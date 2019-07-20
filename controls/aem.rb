@@ -18,6 +18,24 @@ control 'aem-crxde-disabled' do
   end
 end
 
+control 'aem-saml-enabled' do
+  impact 1.0
+  title 'Check SAML is enabled'
+  desc 'Check SAML is enabled'
+  describe aem do
+    it { should have_saml_enabled }
+  end
+end
+
+control 'aem-saml-disabled' do
+  impact 1.0
+  title 'Check SAML is disabled'
+  desc 'Check SAML is disabled'
+  describe aem do
+    it { should have_saml_disabled }
+  end
+end
+
 control 'aem-login-page-avaiable' do
   impact 1.0
   title 'Check if AEM login page is available'

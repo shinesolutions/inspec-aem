@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add check for SAML
+
 ## 1.0.0 - 2019-06-06
 ### Changed
 - Upgrade ruby_aem to 3.2.1
