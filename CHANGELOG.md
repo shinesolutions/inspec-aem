@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add InSpec test for checking if AEM repository migration was skipped [#6]
+
 ## 1.1.0 - 2019-07-21
 ### Added
 - Add check for SAML
