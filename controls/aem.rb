@@ -219,6 +219,17 @@ control 'author-repo-migration-upgrade-log' do
   end
 end
 
+control 'author-repo-migration-not-needed-upgrade-log' do
+  impact 1.0
+  title 'Check if Author repository migration was successful'
+  desc 'Check if Author repository migration was successful'
+  describe file('/opt/aem/author/crx-quickstart/logs/upgrade.log') do
+    it { should exist }
+    it { should be_file }
+    its('content') { should match(/Migration is not needed for this instance. Finishing/) }
+  end
+end
+
 control 'publish-repo-migration-upgrade-log' do
   impact 1.0
   title 'Check if Publish repository migration was successful'
@@ -229,6 +240,17 @@ control 'publish-repo-migration-upgrade-log' do
     its('content') { should match(/migration completed/) }
     its('content') { should_not match(/\*WARN\*/) }
     its('content') { should_not match(/\*ERROR\*/) }
+  end
+end
+
+control 'publish-repo-migration-not-needed-upgrade-log' do
+  impact 1.0
+  title 'Check if Publish repository migration was successful'
+  desc 'Check if Publish repository migration was successful'
+  describe file('/opt/aem/publish/crx-quickstart/logs/upgrade.log') do
+    it { should exist }
+    it { should be_file }
+    its('content') { should match(/Migration is not needed for this instance. Finishing/) }
   end
 end
 
