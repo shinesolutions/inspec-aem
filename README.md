@@ -16,6 +16,10 @@ Run profile directly from GitHub:
 
     inspec exec https://github.com/shinesolutions/inspec-aem
 
+Run specific control:
+
+    inspec supermarket exec shinesolutions/aem "--controls=aem-crxde-disabled aem-saml-enabled"
+
 Run all tests:
 
     make test
