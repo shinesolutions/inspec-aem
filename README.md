@@ -27,3 +27,14 @@ Run all tests:
 Run all tests with custom configuration file:
 
     INSPEC_AEM_CONF=some-aem.yaml make test
+
+Testing
+-------
+
+Integration tests require an AEM instance up and running on http://localhost:4502 with `admin` username and `admin` password.
+
+AEM instance parameters can be overridden using environment variables `aem_protocol`, `aem_host`, `aem_port`, `aem_username`, `aem_password`, and `aem_debug`.
+
+Integration testing can be executed using the command:
+
+    aem_author_port=45652 aem_publish_port=45653 make test-integration
