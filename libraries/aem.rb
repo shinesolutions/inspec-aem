@@ -70,7 +70,7 @@ class Aem < Inspec.resource(1)
 
   def has_development_bundles_partially_enabled?
     result = @client.aem.get_development_bundles_status
-    result.data == false && result.message.start_with? 'Development bundles are partially active'
+    result.data == false && result.message.start_with?('Development bundles are partially active')
   end
 
   def has_saml_enabled?
