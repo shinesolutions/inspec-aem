@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add aem-development-bundles-enabled, aem-development-bundles-disabled, aem-development-bundles-partially-enabled controls
+
+### Changed
+- Upgrade ruby_aem to 3.13.0
+
 ## 1.3.0 - 2020-02-17
 ### Changed
 - Makefile clean target also removes Gemfile.lock file

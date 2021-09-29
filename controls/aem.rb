@@ -18,6 +18,33 @@ control 'aem-crxde-disabled' do
   end
 end
 
+control 'aem-development-bundles-enabled' do
+  impact 1.0
+  title 'Check AEM Development bundles are enabled'
+  desc 'Check AEM Development bundles are enabled'
+  describe aem do
+    it { should have_development_bundles_enabled }
+  end
+end
+
+control 'aem-development-bundles-disabled' do
+  impact 1.0
+  title 'Check AEM Development bundles are disabled'
+  desc 'Check AEM Development bundles are disabled'
+  describe aem do
+    it { should have_development_bundles_disabled }
+  end
+end
+
+control 'aem-development-bundles-partially-enabled' do
+  impact 1.0
+  title 'Check AEM Development bundles are partially enabled'
+  desc 'Check AEM Development bundles are partially enabled'
+  describe aem do
+    it { should have_development_bundles_partially_enabled }
+  end
+end
+
 control 'aem-saml-enabled' do
   impact 1.0
   title 'Check SAML is enabled'

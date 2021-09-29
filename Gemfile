@@ -7,5 +7,5 @@ source 'https://rubygems.org'
 #       InSpec is set to 1.51.6 for consistency with inspec-aem-aws
 gem 'inspec', '1.51.6'
 gem 'rubocop', '0.69.0', require: false
-gem 'ruby_aem', '3.2.1'
+gem 'ruby_aem', '3.13.0'
 gem 'yaml-lint', '0.0.10', require: false
