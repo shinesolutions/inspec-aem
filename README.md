@@ -31,7 +31,7 @@ Run all tests with custom configuration file:
 Testing
 -------
 
-Integration tests require an AEM instance up and running on http://localhost:4502 with `admin` username and `admin` password.
+By default, integration tests require an AEM instance up and running on http://localhost:4502 with `admin` username and `admin` password.
 
 AEM instance parameters can be overridden using environment variables `aem_protocol`, `aem_host`, `aem_port`, `aem_username`, `aem_password`, and `aem_debug`.
 
