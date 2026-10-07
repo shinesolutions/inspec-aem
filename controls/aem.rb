@@ -289,7 +289,7 @@ control 'aem-author-succesfully-upgraded' do
     it { should exist }
     it { should be_file }
     its('content') { should match(/UPGRADE TASK DONE/) }
-    its('content') { should match(/UPGRADE FINISHED\:/) }
+    its('content') { should match(/UPGRADE FINISHED:/) }
     its('content') { should_not match(/\*ERROR\*/) }
   end
 end
@@ -302,7 +302,7 @@ control 'aem-publish-succesfully-upgraded' do
     it { should exist }
     it { should be_file }
     its('content') { should match(/UPGRADE TASK DONE/) }
-    its('content') { should match(/UPGRADE FINISHED\:/) }
+    its('content') { should match(/UPGRADE FINISHED:/) }
     its('content') { should_not match(/\*ERROR\*/) }
   end
 end
