@@ -25,6 +25,7 @@ class Aem < Inspec.resource(1)
   "
 
   def initialize
+    super
     conf = read_config
     @client = init_aem_client(conf)
 
