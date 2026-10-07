@@ -6,6 +6,6 @@ source 'https://rubygems.org'
 #       https://github.com/inspec/train/pull/305
 #       InSpec is set to 1.51.6 for consistency with inspec-aem-aws
 gem 'inspec', '1.51.6'
-gem 'rubocop', '0.69.0', require: false
+gem 'rubocop', '1.90.0', require: false
 gem 'ruby_aem', '3.13.1'
-gem 'yaml-lint', '0.0.10', require: false
+gem 'yaml-lint', '0.1.2', require: false
