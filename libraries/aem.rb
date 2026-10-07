@@ -41,12 +41,12 @@ class Aem < Inspec.resource(1)
         max_sleep_seconds: '2'
       }
     )
-    return false unless result.message.eql? 'Login page retrieved'
+    false unless result.message.eql? 'Login page retrieved'
   end
 
   def has_no_login_page?
     result = @client.aem.get_login_page
-    return true unless result.message.eql? 'Login page retrieved'
+    true unless result.message.eql? 'Login page retrieved'
   end
 
   def has_crxde_enabled?
@@ -93,6 +93,6 @@ class Aem < Inspec.resource(1)
   def has_aem_version_installed?(version)
     result = @client.aem.get_product_info
     installed_version = result.data[6].strip
-    return true if installed_version == "Adobe Experience Manager (#{version})"
+    true if installed_version == "Adobe Experience Manager (#{version})"
   end
 end

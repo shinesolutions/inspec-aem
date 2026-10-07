@@ -39,24 +39,24 @@ class Package < Inspec.resource(1)
   def has_package_imported?
     package = @client.package(@params[:package_group], @params[:package_name], @params[:package_version])
     result = package.exists
-    return true if result.message.eql? "Package #{@params[:package_group]}/#{@params[:package_name]}-#{@params[:package_version]} exists"
+    true if result.message.eql? "Package #{@params[:package_group]}/#{@params[:package_name]}-#{@params[:package_version]} exists"
   end
 
   def has_package_not_imported?
     package = @client.package(@params[:package_group], @params[:package_name], @params[:package_version])
     result = package.exists
-    return true if result.message.eql? "Package #{@params[:package_group]}/#{@params[:package_name]}-#{@params[:package_version]} does not exist"
+    true if result.message.eql? "Package #{@params[:package_group]}/#{@params[:package_name]}-#{@params[:package_version]} does not exist"
   end
 
   def has_package_installed?
     package = @client.package(@params[:package_group], @params[:package_name], @params[:package_version])
     result = package.exists
-    return true if result.message.eql? "Package #{@params[:package_group]}/#{@params[:package_name]}-#{@params[:package_version]} exists"
+    true if result.message.eql? "Package #{@params[:package_group]}/#{@params[:package_name]}-#{@params[:package_version]} exists"
   end
 
   def has_package_not_installed?
     package = @client.package(@params[:package_group], @params[:package_name], @params[:package_version])
     result = package.exists
-    return true if result.message.eql? "Package #{@params[:package_group]}/#{@params[:package_name]}-#{@params[:package_version]} does not exist"
+    true if result.message.eql? "Package #{@params[:package_group]}/#{@params[:package_name]}-#{@params[:package_version]} does not exist"
   end
 end
