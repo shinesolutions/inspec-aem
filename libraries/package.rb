@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-require_relative './helper'
+require_relative 'helper'
 
 # Package class contains checks for AEM package resource
 class Package < Inspec.resource(1)
@@ -30,9 +30,9 @@ class Package < Inspec.resource(1)
     @client = init_aem_client(conf)
 
     @params = {
-      package_group: ENV['package_group'],
-      package_name: ENV['package_name'],
-      package_version: ENV['package_version']
+      package_group: ENV.fetch('package_group', nil),
+      package_name: ENV.fetch('package_name', nil),
+      package_version: ENV.fetch('package_version', nil)
     }
   end
 

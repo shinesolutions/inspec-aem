@@ -22,7 +22,7 @@ def read_config
   %w[username password protocol host port verify_ssl debug].each { |field|
     env_field = format('aem_%<field>s', field: field)
     if !ENV[env_field].nil?
-      config_params[field.to_sym] = ENV[env_field]
+      config_params[field.to_sym] = ENV.fetch(env_field, nil)
     elsif !config.nil? && !config[field.to_sym].nil?
       config_params[field.to_sym] = config[field.to_sym]
     end

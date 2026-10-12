@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-require_relative './helper'
+require_relative 'helper'
 
 # Aem class contains checks for AEM instance resource
 class Aem < Inspec.resource(1)
