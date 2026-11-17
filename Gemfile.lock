@@ -407,7 +407,7 @@ GEM
       dry-logic (~> 1.4)
       zeitwerk (~> 2.6)
     erubi (1.13.1)
-    ethon (0.18.0)
+    ethon (0.19.2)
       ffi (>= 1.15.0)
       logger
     excon (1.7.2)
@@ -623,11 +623,11 @@ GEM
       prism (~> 1.7)
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
-    ruby_aem (4.0.2)
+    ruby_aem (4.2.1)
       retries (= 0.0.5)
       rexml (= 3.4.4)
-      swagger_aem (= 4.0.0)
-      swagger_aem_osgi (= 2.0.0)
+      swagger_aem (= 4.1.0)
+      swagger_aem_osgi (= 2.1.0)
     rubyntlm (0.6.8)
       base64
     rubyzip (3.7.0)
@@ -645,9 +645,9 @@ GEM
       unicode-display_width (>= 1.5, < 3.0)
       unicode_utils (~> 1.4)
     strings-ansi (0.2.0)
-    swagger_aem (4.0.0)
+    swagger_aem (4.1.0)
       typhoeus (~> 1.0, >= 1.0.1)
-    swagger_aem_osgi (2.0.0)
+    swagger_aem_osgi (2.1.0)
       typhoeus (~> 1.0, >= 1.0.1)
     syslog (0.4.0)
       logger
@@ -793,8 +793,8 @@ GEM
       pastel (~> 0.8)
       strings (~> 0.2.0)
       tty-screen (~> 0.8)
-    typhoeus (1.6.0)
-      ethon (>= 0.18.0)
+    typhoeus (1.7.1)
+      ethon (>= 0.19.1, < 0.20.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     uber (0.1.0)
@@ -823,7 +823,7 @@ DEPENDENCIES
   inspec (= 7.2.1)!
   inspec-bin (= 7.2.1)!
   rubocop (= 1.90.0)
-  ruby_aem (= 4.0.2)
+  ruby_aem (= 4.2.1)
   yaml-lint (= 0.1.2)
 
 CHECKSUMS
@@ -948,7 +948,7 @@ CHECKSUMS
   dry-struct (1.8.1) sha256=033868594c45241540172bf1ebbc8bb76b72b4f0717072325deba38ac13e80f1
   dry-types (1.9.1) sha256=baebeecdb9f8395d6c9d227b62011279440943e3ef2468fe8ccc1ba11467f178
   erubi (1.13.1) sha256=a082103b0885dbc5ecf1172fede897f9ebdb745a4b97a5e8dc63953db1ee4ad9
-  ethon (0.18.0) sha256=b598afc9f30448cb068b850714b7d6948e941476095d04f90a4ac65b8d6efcb2
+  ethon (0.19.2) sha256=805717b6d0e6221e8a1d654270e839709846219df2e326d59642f595ae6de7b2
   excon (1.7.2) sha256=2557b17420f134f00de79cc52abd325d5767291e23af7ddd03ee07952189a569
   faraday (1.10.6) sha256=7ff4802a6b312876a2241b3e641ce0d5045e168dd871b422c35b505e5261ad4d
   faraday-cookie_jar (0.0.8) sha256=0140605823f8cc63c7028fccee486aaed8e54835c360cffc1f7c8c07c4299dbb
@@ -1056,7 +1056,7 @@ CHECKSUMS
   rubocop-ast (1.50.0) sha256=b9ca88300da0803ee222ad20cdb30494c0a784eed06fdc35d254b06d662788db
   ruby-progressbar (1.13.0) sha256=80fc9c47a9b640d6834e0dc7b3c94c9df37f08cb072b7761e4a71e22cff29b33
   ruby2_keywords (0.0.5) sha256=ffd13740c573b7301cf7a2e61fc857b2a8e3d3aff32545d6f8300d8bae10e3ef
-  ruby_aem (4.0.2) sha256=43353e6c510eaf0d058de3f1c81bb508354e4a89fdb1d29ecb97cde3b93b276c
+  ruby_aem (4.2.1) sha256=4c664e83cccc9ccf9c078d619bd5ba09ce6b3f6155018af4a08227c605b4c552
   rubyntlm (0.6.8) sha256=054aa45ffcae40db4020d3e41da41f40427aa8733181a2b87751f04ba53ca0d5
   rubyzip (3.7.0) sha256=65c19294da75297a939006f3516deacc33185fbd721ff1954f7a231db6d3e121
   securerandom (0.4.1) sha256=cc5193d414a4341b6e225f0cb4446aceca8e50d5e1888743fac16987638ea0b1
@@ -1067,8 +1067,8 @@ CHECKSUMS
   stringio (3.2.0) sha256=c37cb2e58b4ffbd33fe5cd948c05934af997b36e0b6ca6fdf43afa234cf222e1
   strings (0.2.1) sha256=933293b3c95cf85b81eb44b3cf673e3087661ba739bbadfeadf442083158d6fb
   strings-ansi (0.2.0) sha256=90262d760ea4a94cc2ae8d58205277a343409c288cbe7c29416b1826bd511c88
-  swagger_aem (4.0.0) sha256=313e97d36405fd8a56b7d301878f7e64c306e38edb668221f70d7b2651134ade
-  swagger_aem_osgi (2.0.0) sha256=af8701d8866c8a7a3d76e35022d8532df946dfe761fa0a6e5754ac760abbbab4
+  swagger_aem (4.1.0) sha256=75e6a0b029a976ffd9a01b0b06cf4ceb8d79a7dbece4960ee0566e4d00beb4df
+  swagger_aem_osgi (2.1.0) sha256=72cefe078d86831585c9ad137a4fed6bfafbf81946cbe33f466c75689820f944
   syslog (0.4.0) sha256=c4c38ae982fe72903ec41094b5e5f2dcbbc66f510d0225c9702e5e980d827472
   thor (1.4.0) sha256=8763e822ccb0f1d7bee88cde131b19a65606657b847cc7b7b4b82e772bcd8a3d
   timeliness (0.3.10) sha256=c357233ce19dc53148e8b29dfddde134689f18f52b32928e9dfe12ebcf4a773f
@@ -1088,7 +1088,7 @@ CHECKSUMS
   tty-screen (0.8.2) sha256=c090652115beae764336c28802d633f204fb84da93c6a968aa5d8e319e819b50
   tty-spinner (0.9.3) sha256=0e036f047b4ffb61f2aa45f5a770ec00b4d04130531558a94bfc5b192b570542
   tty-table (0.12.0) sha256=fdc27a4750835c1a16efe19a0b857e3ced3652cc7aceafe6dca94908965b9939
-  typhoeus (1.6.0) sha256=bacc41c23e379547e29801dc235cd1699b70b955a1ba3d32b2b877aa844c331d
+  typhoeus (1.7.1) sha256=86dcb6d787ee08e34947c9436b24af3c4b02880dc83c466b6ca4dbfc53c2ee7f
   tzinfo (2.0.6) sha256=8daf828cc77bcf7d63b0e3bdb6caa47e2272dcfaf4fbfe46f8c3a9df087a829b
   uber (0.1.0) sha256=5beeb407ff807b5db994f82fa9ee07cfceaa561dad8af20be880bc67eba935dc
   unicode-display_width (2.6.0) sha256=12279874bba6d5e4d2728cef814b19197dbb10d7a7837a869bab65da943b7f5a
