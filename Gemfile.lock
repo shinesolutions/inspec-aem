@@ -32,7 +32,7 @@ GEM
       pry (~> 0.13)
       rspec (>= 3.9, <= 3.14)
       rspec-its (>= 1.2, < 3.0)
-      rubyzip (>= 1.2.2, < 4.0)
+      rubyzip (>= 2.4.1, < 4.0)
       semverse (~> 3.0)
       sslshake (~> 1.2)
       syslog (~> 0.1)
@@ -997,7 +997,7 @@ CHECKSUMS
   inifile (3.0.0) sha256=b103eb3655ec93cc626cf2de00950e91f7e69b8398842968e17e1815cfacbfb0
   inspec (7.2.1) sha256=b0ca3f8b5da4b540a5799e816c689f9a0f4c2822d8713ab0572dad77572789f0
   inspec-bin (7.2.1) sha256=5d51a1782c07cd8d7ec6c6bd6190a0455781146db0e086a634c1a4dcad5d1d9d
-  inspec-core (7.2.1) sha256=139dbde873c1ab91a6f140624354831ff6a3b1d5476fdda9cdd39f71b7b1225e
+  inspec-core (7.2.1) sha256=0076bdf8ba830fefc282f41282bf8c83433ec8831345127000da5edd86065a66
   io-console (0.9.4) sha256=a403304f32928ee85e56d457b4612ca43f2703b561a3258844992bd24085fbb1
   jmespath (1.6.2) sha256=238d774a58723d6c090494c8879b5e9918c19485f7e840f2c1c7532cf84ebcb1
   json (2.21.2) sha256=1f1d3b7cf2b3ba1a69beca0bb6db13d5438b80bff3cd54cdaaa620b9b07c1c6a
